@@ -1,0 +1,259 @@
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop (main)
+$ git --version
+git version 2.38.1.windows.1
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop (main)
+$ git config --global user.name "Elahe"
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop (main)
+$ mkdir test
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop (main)
+$ cd test
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (main)
+$ git init
+Initialized empty Git repository in C:/Users/Asus/Desktop/test/.git/
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ ls
+index.html
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git add index.html
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git add --all
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   README.md
+        new file:   bluestyle.css
+        new file:   index.html
+
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git commit -m "first release of hello world!"
+[master (root-commit) f497fc5] first release of hello world!
+ 3 files changed, 25 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 bluestyle.css
+ create mode 100644 index.html
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git status --short
+ M index.html
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git commit -a -m "Update index.html with a new line"[master 77b9205] Update index.html with a new line
+ 1 file changed, 2 insertions(+)
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git log
+commit 77b9205f7b4836077a743f16e5f3190b0099b8a5 (HEAD -> master)
+Author: Elahe <118528877+ElAHESLAMi@users.noreply.github.com>
+Date:   Sat Apr 8 16:20:24 2023 +0430
+
+    Update index.html with a new line
+
+commit f497fc5675e915bf3532b2dec189410303e6c6d3
+Author: Elahe <118528877+ElAHESLAMi@users.noreply.github.com>
+Date:   Sat Apr 8 16:18:22 2023 +0430
+
+    first release of hello world!
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git branch hello-world-images
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git branch
+  hello-world-images
+* master
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git checkout hello-world-images
+Switched to branch 'hello-world-images'
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (hello-world-images)
+$ git status
+On branch hello-world-images
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        1.jpg
+        3.jpeg
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (hello-world-images)
+$ git add --all
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (hello-world-images)
+$ git status
+On branch hello-world-images
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   1.jpg
+        new file:   3.jpeg
+
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (hello-world-images)
+$ git commit -m "added image to hello world"
+[hello-world-images bdbbe49] added image to hello world
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 1.jpg
+ create mode 100644 3.jpeg
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (hello-world-images)
+$ ls
+1.jpg  3.jpeg  README.md  bluestyle.css  index.html
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (hello-world-images)
+$ git checkout master
+Switched to branch 'master'
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ ls
+README.md  bluestyle.css  index.html
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git checkout -b emergency
+Switched to a new branch 'emergency'
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (emergency)
+$ git status
+On branch emergency
+nothing to commit, working tree clean
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (emergency)
+$ git status
+On branch emergency
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (emergency)
+$ git add index.html
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (emergency)
+$ git commit -m "update index.html with emergency"
+[emergency 05d65b6] update index.html with emergency
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (emergency)
+$ git checkout master
+Switched to branch 'master'
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git merge emergency
+Updating 77b9205..05d65b6
+Fast-forward
+ index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git branch -d emergency
+Deleted branch emergency (was 05d65b6).
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git checkout hello-world-images
+Switched to branch 'hello-world-images'
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (hello-world-images)
+$ git add --all
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (hello-world-images)
+$ git commit -m "added new image"
+[hello-world-images 7f995e4] added new image
+ 1 file changed, 2 insertions(+)
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (hello-world-images)
+$ git checkout master
+Switched to branch 'master'
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git merge hello-world-images
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Changes to be committed:
+        new file:   1.jpg
+        new file:   3.jpeg
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   index.html
+
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master|MERGING)
+$ git add index.html
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master|MERGING)
+$ git status
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        new file:   1.jpg
+        new file:   3.jpeg
+        modified:   index.html
+
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master|MERGING)
+$ git commit -m "merged with hello-world-images after fixing conflicts"
+[master 98edd27] merged with hello-world-images after fixing conflicts
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git branch -d hello-world-images
+Deleted branch hello-world-images (was 7f995e4).
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ ^C
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$ git branch -d hello-world-images
+error: branch 'hello-world-images' not found.
+
+ElAHE@ELAHEESLAMI MINGW64 ~/Desktop/test (master)
+$
